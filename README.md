@@ -1,6 +1,6 @@
 # @light-tooltip.js
 
-This is literally just a tooltip. All you gotta do is add the `tooltip-{position}` attribute to your element with the desired content. That's it.
+This is literally just a tooltip. All you gotta do is add the `tooltip_{position}` attribute to your element with the desired content. That's it.
 
 ## Installation
 
@@ -18,14 +18,14 @@ That's it. That's the whole library.
 ## Quick Start
 
 ```html
-<button tooltip-top="I'm a tooltip!">Hover me</button>
+<button tooltip_top="I'm a tooltip!">Hover me</button>
 
 <script src="light-tooltip.min.js"></script>
 ```
 
 ## Positions
 
-The `tooltip-{position}` attribute accepts 8 position values:
+The `tooltip_{position}` attribute accepts 8 position values:
 
 | Position | Description |
 |----------|-------------|
@@ -42,28 +42,28 @@ The `tooltip-{position}` attribute accepts 8 position values:
 
 ```html
 <!-- Top center -->
-<span tooltip-t="Top tooltip">Hover</span>
+<span tooltip_t="Top tooltip">Hover</span>
 
 <!-- Top left -->
-<span tooltip-tl="Top left">Hover</span>
+<span tooltip_tl="Top left">Hover</span>
 
 <!-- Top right -->
-<span tooltip-tr="Top right">Hover</span>
+<span tooltip_tr="Top right">Hover</span>
 
 <!-- Bottom center -->
-<span tooltip-b="Bottom tooltip">Hover</span>
+<span tooltip_b="Bottom tooltip">Hover</span>
 
 <!-- Bottom left -->
-<span tooltip-bl="Bottom left">Hover</span>
+<span tooltip_bl="Bottom left">Hover</span>
 
 <!-- Bottom right -->
-<span tooltip-br="Bottom right">Hover</span>
+<span tooltip_br="Bottom right">Hover</span>
 
 <!-- Left -->
-<span tooltip-l="Left tooltip">Hover</span>
+<span tooltip_l="Left tooltip">Hover</span>
 
 <!-- Right -->
-<span tooltip-r="Right tooltip">Hover</span>
+<span tooltip_r="Right tooltip">Hover</span>
 ```
 
 ---
@@ -73,7 +73,7 @@ The `tooltip-{position}` attribute accepts 8 position values:
 The library applies minimal inline styles. You can override them with your own CSS:
 
 ```css
-[style*="--tooltip-bg"] { /* not applicable - uses inline styles */ }
+[style*="--tooltip_bg"] { /* not applicable - uses inline styles */ }
 
 /* The tooltip element is fixed position with these defaults */
 div[style*="position: fixed"] {
@@ -118,10 +118,10 @@ body > div[style*="position: fixed"][style*="z-index: 9999"] {
   </style>
 </head>
 <body>
-  <button class="btn" tooltip-t="I'm on top!">Top</button>
-  <button class="btn" tooltip-b="I'm at bottom!">Bottom</button>
-  <button class="btn" tooltip-l="I'm on the left!">Left</button>
-  <button class="btn" tooltip-r="I'm on the right!">Right</button>
+  <button class="btn" tooltip_t="I'm on top!">Top</button>
+  <button class="btn" tooltip_b="I'm at bottom!">Bottom</button>
+  <button class="btn" tooltip_l="I'm on the left!">Left</button>
+  <button class="btn" tooltip_r="I'm on the right!">Right</button>
 
   <script src="light-tooltip.min.js"></script>
 </body>
@@ -150,9 +150,9 @@ body > div[style*="position: fixed"][style*="z-index: 9999"] {
   </style>
 </head>
 <body>
-  <button class="icon-btn" tooltip-tl="Home">🏠</button>
-  <button class="icon-btn" tooltip-t="Search">🔍</button>
-  <button class="icon-btn" tooltip-tr="Settings">⚙️</button>
+  <button class="icon-btn" tooltip_tl="Home">🏠</button>
+  <button class="icon-btn" tooltip_t="Search">🔍</button>
+  <button class="icon-btn" tooltip_tr="Settings">⚙️</button>
 
   <script src="light-tooltip.min.js"></script>
 </body>
@@ -187,12 +187,12 @@ body > div[style*="position: fixed"][style*="z-index: 9999"] {
 <body>
   <form>
     <label>Email</label>
-    <input type="email" placeholder="Enter email" tooltip-bl="We'll never share your email">
+    <input type="email" placeholder="Enter email" tooltip_bl="We'll never share your email">
 
     <label>Password</label>
-    <input type="password" placeholder="Enter password" tooltip-bl="Must be at least 8 characters">
+    <input type="password" placeholder="Enter password" tooltip_bl="Must be at least 8 characters">
 
-    <button type="submit" tooltip-b="Click to submit">Submit</button>
+    <button type="submit" tooltip_b="Click to submit">Submit</button>
   </form>
 
   <script src="light-tooltip.min.js"></script>
@@ -216,9 +216,9 @@ body > div[style*="position: fixed"][style*="z-index: 9999"] {
   </style>
 </head>
 <body>
-  <img src="cat.jpg" tooltip-b="A cute cat" alt="Cat">
-  <img src="dog.jpg" tooltip-b="A friendly dog" alt="Dog">
-  <img src="bird.jpg" tooltip-b="A colorful bird" alt="Bird">
+  <img src="cat.jpg" tooltip_b="A cute cat" alt="Cat">
+  <img src="dog.jpg" tooltip_b="A friendly dog" alt="Dog">
+  <img src="bird.jpg" tooltip_b="A colorful bird" alt="Bird">
 
   <script src="light-tooltip.min.js"></script>
 </body>
