@@ -2,6 +2,7 @@
   const gap = 6;
   const positions = new Set(["t", "tl", "tr", "b", "bl", "br", "l", "r"]);
   const tip = document.createElement("div");
+
   Object.assign(tip.style, {
     position: "fixed",
     padding: "4px 8px",
@@ -15,6 +16,7 @@
     opacity: 0,
     transition: "opacity .1s"
   });
+
   document.body.appendChild(tip);
 
   function show(el, pos, content) {
@@ -34,8 +36,8 @@
       case "b":  top = r.bottom + gap;                     left = r.left + (r.width - t.width) / 2; break;
       case "bl": top = r.bottom + gap;                     left = r.left;                            break;
       case "br": top = r.bottom + gap;                     left = r.right - t.width;                 break;
-      case "l":  top = r.top + (r.height - t.height) / 2; left = r.left - t.width - gap;            break;
-      case "r":  top = r.top + (r.height - t.height) / 2; left = r.right + gap;                     break;
+      case "l":  top = r.top + (r.height - t.height) / 2;  left = r.left - t.width - gap;            break;
+      case "r":  top = r.top + (r.height - t.height) / 2;  left = r.right + gap;                     break;
     }
 
     tip.style.top = top + "px";
@@ -47,16 +49,19 @@
   }
 
   document.addEventListener("mouseover", e => {
-    const el = e.target.closest("[tooltipT],[tooltipTl],[tooltipTr],[tooltipB],[tooltipBl],[tooltipBr],[tooltipL],[tooltipR]");
+    const el = e.target.closest("[tooltip_t],[tooltip_tl],[tooltip_tr],[tooltip_b],[tooltip_bl],[tooltip_br],[tooltip_l],[tooltip_r]");
     if (!el) return;
+
     for (const pos of positions) {
-      const attr = "tooltip" + pos.charAt(0).toUpperCase() + pos.slice(1);
+      const attr = "tooltip_" + pos;
       const content = el.getAttribute(attr);
       if (content !== null) return show(el, pos, content);
     }
   });
 
   document.addEventListener("mouseout", e => {
-    if (!e.relatedTarget || !e.relatedTarget.closest("[tooltipT],[tooltipTl],[tooltipTr],[tooltipB],[tooltipBl],[tooltipBr],[tooltipL],[tooltipR]")) hide();
+    if (!e.relatedTarget || !e.relatedTarget.closest("[tooltip_t],[tooltip_tl],[tooltip_tr],[tooltip_b],[tooltip_bl],[tooltip_br],[tooltip_l],[tooltip_r]")) {
+      hide();
+    }
   });
 })();
